@@ -1,0 +1,5 @@
+export const bluePrimary = '#0d47a1'
+export const blueAccent = '#82b1ff'
+export const grayBackground = '#fafafa'
+export const orangeFalse = '#bf360c'
+export const greenCorrect = '#7cb342'

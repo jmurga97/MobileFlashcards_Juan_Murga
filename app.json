@@ -1,11 +1,23 @@
 {
   "expo": {
-    "name": "MobileFlashcards",
-    "slug": "MobileFlashcards",
+    "sdkVersion": "42.0.0",
+    "orientation": "portrait",
+    "name": "Mobile Flashcards",
+    "slug": "Mobile Flashcards",
+    "description": "An app for quiz yourself... if you want to pass that test.",
+    "icon": "./book.png",
+    "notification": {
+      "icon": "./book.png"
+    },
+    "ios": {
+      "bundleIdentifier": "mobileflashcards.exp"
+    },
+    "android": {
+      "package": "mobileflashcards.exp"
+    },
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ]
-  },
-  "name": "MobileFlashcards"
+  }
 }
