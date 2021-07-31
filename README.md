@@ -12,7 +12,6 @@ We shall run the next command in the project directory:
 
 ## Tested Platforms:
   Android
-  Android Simulator
   
 ### Content
 The App is using Redux for state management, React Navigation for the app navigation, and AsyncStorage to handle the local database.
