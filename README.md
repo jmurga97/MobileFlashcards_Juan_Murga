@@ -6,10 +6,14 @@ For this project, i built a mobile application (Only tested on Android) that all
 
 We shall run the next command in the project directory:
   Note: In case you dont have expo, please run: yarn global add expo-cli
-  ## 1. Clone or download the project
-  ## 2. Run yarn install in the project root directory to install dependencies
-  ## 3. Run expo start to launch the project
+  ### 1. Clone or download the project
+  ### 2. Run yarn install in the project root directory to install dependencies
+  ### 3. Run expo start to launch the project
 
+## Tested Platforms:
+  Android
+  Android Simulator
+  
 ### Content
 The App is using Redux for state management, React Navigation for the app navigation, and AsyncStorage to handle the local database.
 
