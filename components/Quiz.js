@@ -9,6 +9,7 @@ import React, { Component } from 'react'
 import { blueAccent, bluePrimary, greenCorrect, orangeFalse } from '../utils/colors';
 import {connect} from 'react-redux'
 import CardFlip from 'react-native-card-flip';
+import {clearLocalNotification} from '../utils/helpers'
 
 class Quiz extends Component {
 
@@ -35,6 +36,7 @@ class Quiz extends Component {
     }
 
     startAgain = () => {
+        clearLocalNotification()
         this.props.navigation.replace('Quiz',{deckId: this.props.deck.id})
         //In order to use the animation of changing the screens of React Navigation, I refresh the actual view with navigation.replace
 
@@ -48,6 +50,7 @@ class Quiz extends Component {
             // })
     }
     toHome = () => {
+        clearLocalNotification()
         this.props.navigation.navigate('DeckList')
     }
     nextQuestion = (answer) => {

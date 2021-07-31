@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# MobileFlashcards App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For this project, i built a mobile application (Only tested on Android) that allows users to study collections of flashcards. The app will allow users to create different categories of flashcards called "decks", add flashcards to those decks, then take quizzes on those decks.
 
-## Available Scripts
+## To Run MobileFlashcards
 
-In the project directory, you can run:
+We shall run the next command in the project directory:
+  yarn expo start
 
-### `yarn start`
+### Content
+The App is using Redux for state management, React Navigation for the app navigation, and AsyncStorage to handle the local database.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+When the app loads, the first view showed is a list of created decks which includes the name of each deck and the number of cards. Pressing on a deck in the list will route to an individual deck view, where the user can add cards to the deck or start the Quiz.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The Deck View will show the deck title, the number of cards in the deck, and two buttons to start a quiz for that deck and add a new question to the deck. Each one will route to a different component through a Stack Navigator.
+The New Question View includes a form with fields for a question and answer, and a submit button. When the user touches the submit button, the app will redirect the user to the Deck View, load the data to the Store, and then save it in the Local Storage through AsyncStorage.
 
-### `yarn test`
+The Quiz View will check if the user has cards on the deck. If not, it will display a message asking for adding cards.
+    The Quiz view starts with a question from the selected deck.
+    The question is displayed, along with a button to show the answer.
+    Pressing the 'Show Answer' button displays the answer and will trigger an animation that will "flip" the card, showing the answer on the back.
+    Buttons are included to allow the student to mark their guess as 'Correct' or 'Incorrect'
+    The view displays the number of questions remaining.
+    When the last question is answered, a score is displayed.
+    When the score is displayed, buttons are displayed to either start the quiz over or go back to the Individual Deck view.
+    Both the 'Restart Quiz' and 'Back to Deck' buttons route correctly to their respective views.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The New Deck View includes a form for creating a new deck and a 'Create Deck' button. When the user touches the 'Create Deck' button, the app will redirect the user to the DeckList View (showing the new deck on the list), load the data to the Store, and then save it in the Local Storage through AsyncStorage.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Logic for notification has been implemented. Notifications are generated at a 6:00 pm if the user hasn't completed at least one quiz for that day.
